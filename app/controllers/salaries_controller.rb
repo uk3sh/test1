@@ -1,7 +1,11 @@
 class SalariesController < ApplicationController
 
   def index
+    @sal = Salary.new
 
+  end
+
+  def display
     @emp = Employee.all
 
     @emp.each do |a|
@@ -14,6 +18,7 @@ class SalariesController < ApplicationController
       @test.period = @date
       @test.save!
     end
+
   end
 
 end

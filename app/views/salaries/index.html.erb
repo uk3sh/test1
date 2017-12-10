@@ -1,2 +1,8 @@
-Hello!
-<%= @date %>
+<%= form_for @sal, :url => { :action => "display" } do |f| %>
+
+  <%= f.label :period %>
+  <%= f.date_field :period %>
+
+  <%= f.submit "Generate Salary" %>
+
+<% end %>

@@ -3,4 +3,9 @@ Rails.application.routes.draw do
 
   resources :salaries
 
+  post '/display', to: 'salaries#display'
+  get '/display', to: 'salaries#display'
+
+
+
 end

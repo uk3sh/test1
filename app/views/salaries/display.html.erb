@@ -1,0 +1,3 @@
+<% @emp.each do |e| %>
+  <%= @a=Salary.find_by(employee_id: e.id).gsal %>
+<% end %>
