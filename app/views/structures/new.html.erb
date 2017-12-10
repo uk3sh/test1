@@ -1,1 +1,18 @@
-Hello!
+<%= form_for @st do |f| %>
+
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+
+    <%= f.label :bp %>
+    <%= f.number_field :bp %>
+
+    <%= f.label :da %>
+    <%= f.number_field :da %>
+
+    <%= f.label :hra %>
+    <%= f.number_field :hra %>
+
+    <%= f.submit "Add Structure" %>
+
+
+ <% end %>

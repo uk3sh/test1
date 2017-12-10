@@ -1,1 +1,11 @@
-Success!
+<%= form_for @emp do |f| %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :select_role %>
+  <%= f.select :structure_id, options_for_select(Structure.all.map{|s|[s.name, s.id]}) %>
+
+  <%= f.submit "Add Employee" %>
+
+<% end %>
