@@ -1,3 +1,18 @@
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Basic Pay</th>
+    <th>DA</th>
+    <th>HRA</th>
+    <th>Gross Salary</th>
+  </tr>
 <% @emp.each do |e| %>
-  <%= @a=Salary.find_by(employee_id: e.id).gsal %>
+  <tr>
+    <td><%= e.name %></td>
+    <td><%= Structure.find(e.structure_id).bp %></td>
+    <td><%= Structure.find(e.structure_id).da %></td>
+    <td><%= Structure.find(e.structure_id).hra %></td>
+    <td><%= Salary.find_by(employee_id: e.id).gsal %></td>
+  </tr>
 <% end %>
+</table>
