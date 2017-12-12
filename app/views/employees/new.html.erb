@@ -1,0 +1,7 @@
+<%= simple_form_for @employee do |f| %>
+  <%= f.input :first_name %>
+  <%= f.input :last_name %>
+  <%= f.association :position %>
+
+  <%= f.button :submit %>
+<% end %>

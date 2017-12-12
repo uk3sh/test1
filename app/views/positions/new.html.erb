@@ -1,0 +1,7 @@
+<%= simple_form_for @position do |f| %>
+  <%= f.input :name %>
+  <%= f.input :basic_pay, as: :decimal %>
+  <%= f.input :dearness_allowance, as: :decimal %>
+  <%= f.input :tax, as: :decimal %>
+  <%= f.button :submit %>
+<% end %>

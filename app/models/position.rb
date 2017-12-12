@@ -1,4 +1,4 @@
 class Position < ApplicationRecord
 
-  has many :employees
+  has_many :employees
 end
