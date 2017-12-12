@@ -6,3 +6,12 @@
   <%= f.submit "Generate Salary" %>
 
 <% end %>
+
+<%= form_for :anything, :url => { :action => "rep" } do |f| %>
+
+
+  <%= f.label :select_employee %>
+  <%= f.select :testa, options_for_select(Employee.all.map{|s|[s.name, s.id]}), :include_blank => true %>
+  <%= f.submit "Generate Report" %>
+
+<% end %>

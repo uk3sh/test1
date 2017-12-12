@@ -8,6 +8,9 @@ Rails.application.routes.draw do
   post '/display', to: 'salaries#display'
   get '/display', to: 'salaries#display'
 
+  post '/report', to: 'salaries#rep'
+  
+
 
 
 end

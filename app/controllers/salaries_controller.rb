@@ -21,4 +21,8 @@ class SalariesController < ApplicationController
 
   end
 
+  def rep
+    
+  end
+
 end
