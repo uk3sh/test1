@@ -10,33 +10,37 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171208163008) do
+ActiveRecord::Schema.define(version: 20171212082318) do
 
   create_table "employees", force: :cascade do |t|
-    t.string "name"
+    t.string "first_name"
+    t.string "last_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "structure_id"
-    t.index ["structure_id"], name: "index_employees_on_structure_id"
+    t.integer "position_id"
+    t.index ["position_id"], name: "index_employees_on_position_id"
+  end
+
+  create_table "positions", force: :cascade do |t|
+    t.string "name"
+    t.decimal "basic_pay"
+    t.decimal "dearness_allowance"
+    t.decimal "tax"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "salaries", force: :cascade do |t|
-    t.date "period"
-    t.integer "gsal"
+    t.date "from"
+    t.date "to"
+    t.decimal "gross_salary"
+    t.decimal "deductions"
+    t.decimal "net_salary"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "employee_id"
+    t.index ["employee_id", "from", "to"], name: "index_salaries_on_employee_id_and_from_and_to", unique: true
     t.index ["employee_id"], name: "index_salaries_on_employee_id"
-    t.index ["period", "employee_id"], name: "index_salaries_on_period_and_employee_id", unique: true
-  end
-
-  create_table "structures", force: :cascade do |t|
-    t.string "name"
-    t.integer "bp"
-    t.integer "da"
-    t.integer "hra"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
 end
